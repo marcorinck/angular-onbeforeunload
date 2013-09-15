@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angular-growl demo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="../build/angular-onbeforeunload.js"></script>
+	<script src="demo.js"></script>
+</head>
+<body ng-app="demo">
+
+<div ng-controller="demoCtrl">
+	<h1>angular-onbeforeunload Demo site</h1>
+
+	<form name="test" onbeforeunload>
+
+		<label>
+			Message text
+			<input type="text" ng-model="message">
+		</label>
+
+	</form>
+
+	<form name="test2" onbeforeunload>
+
+		<label>
+			Message text2
+			<input type="text" ng-model="message2">
+		</label>
+
+	</form>
+
+	<a href="http://www.google.com">Leave site</a>
+
+</div>
+</body>
+</html>
