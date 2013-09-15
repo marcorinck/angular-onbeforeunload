@@ -1,10 +1,10 @@
 angular.module('angular-onbeforeunload', []);
-angular.module("angular-onbeforeunload").directive("onbeforeunload", ["$window", function ($window) {
+angular.module("angular-onbeforeunload").directive("onbeforeunload", ["$window", "$filter", function ($window, $filter) {
 	"use strict";
-	var forms = [];
+	var unloadtext, forms = [];
 
 	function handleOnbeforeUnload() {
-		var i, form, s = "test", isDirty = false;
+		var i, form, isDirty = false;
 
 		for (i = 0; i < forms.length; i++) {
 			form = forms[i];
@@ -16,7 +16,7 @@ angular.module("angular-onbeforeunload").directive("onbeforeunload", ["$window",
 		}
 
 		if (isDirty) {
-			return s;
+			return unloadtext;
 		} else {
 			return undefined;
 		}
@@ -34,21 +34,10 @@ angular.module("angular-onbeforeunload").directive("onbeforeunload", ["$window",
 
 		$window.onbeforeunload = handleOnbeforeUnload;
 
-//        $element.bind("tap", function (event) {
-//            var confirmMessage = $attrs.confirmMessage;
-//            if (confirmMessage) {
-//                if ($window.confirm(localizationService.translate(confirmMessage))) {
-//                    $scope.$apply($attrs.tap);
-//                }
-//            } else {
-//                $scope.$apply($attrs.tap);
-//            }
-//            event.stopPropagation();
-//            event.preventDefault();
-//        });
+		try {
+			unloadtext = $filter("translate")("onbeforeunload");
+		} catch (err) {
+			unloadtext = ""
+		}
 	};
-
-}
-
-])
-;
+}]);
