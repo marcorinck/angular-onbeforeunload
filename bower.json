@@ -16,7 +16,9 @@
 		"package.json",
 		"gruntfile.js",
 		"karma.conf.js",
+		"bower.json",
 		"TODO",
+		"demo",
 		".gitignore"
 	],
 	"dependencies": {
