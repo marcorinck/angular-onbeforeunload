@@ -22,7 +22,7 @@ angular.module("angular-onbeforeunload").directive("onbeforeunload", ["$window",
 		}
 	}
 
-	return function ($scope, $element, $attrs) {
+	return function ($scope, $element) {
 		if ($element[0].localName !== 'form') {
 			throw new Error("onbeforeunload directive must only be set on a angularjs form!");
 		}
@@ -37,7 +37,7 @@ angular.module("angular-onbeforeunload").directive("onbeforeunload", ["$window",
 		try {
 			unloadtext = $filter("translate")("onbeforeunload");
 		} catch (err) {
-			unloadtext = ""
+			unloadtext = "";
 		}
 	};
 }]);
