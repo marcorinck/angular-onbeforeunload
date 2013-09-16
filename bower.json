@@ -2,7 +2,7 @@
 	"author": "Marco Rinck",
 	"name": "angular-onbeforeunload",
 	"description": "angular directive to handle window.onbeforeunload event in angularJS forms",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"homepage": "https://github.com/marcorinck/angular-onbeforeunload",
 	"repository": {
 		"type": "git",
