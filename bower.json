@@ -10,7 +10,14 @@
 	},
 	"main": "./build/angular-onbeforeunload.js",
 	"ignore": [
-		"**/.*"
+		"src",
+		"test",
+		".jshintrc",
+		"package.json",
+		"gruntfile.js",
+		"karma.conf.js",
+		"TODO",
+		".gitignore"
 	],
 	"dependencies": {
 		"angular": "1.0.8"
